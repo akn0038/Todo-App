@@ -23,7 +23,7 @@ app.listen(port)
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-function passwordProtected(req,res,next)
+/*function passwordProtected(req,res,next)
 {
   res.set('www-Authenticate','Basic realm="Simple ToDo App"')
   //console.log(req.headers.authorization)
@@ -34,8 +34,8 @@ function passwordProtected(req,res,next)
   else {
     res.status(401).send("Authentication required")
   }
-}
-app.use(passwordProtected)
+}*/
+//app.use(passwordProtected)
 app.get('/', function(req,res){
     db.collection('items').find().toArray(function(err,items){
       res.send(`<!DOCTYPE html>
